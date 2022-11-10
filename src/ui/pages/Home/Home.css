@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.hero{
+    position: relative;
+}
+
+.hero .hero-background{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    background: url(hero-bg.jpeg) no-repeat;
+    background-size: cover;
+}
+
+.hero .hero-foreground{
+    background:#11111199;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+}
+
+.hero-header{
+    color: #ffffff;
+    text-align: center;
+    font: 600 70px/76px "Outfit";
+}
+
+.hero-text {
+    color: #c3c8cd;
+    text-align: center;
+}
+
+.input{
+    outline: none;
+    display: block;
+    width: 100%;
+    color: #a5a9b3;
+    position: absolute;
+    background: #283A4B;
+    border: 1px solid #324354;
+    border-radius: 32px;
+    padding: 15px;
+}
+
+
+
+.top-destination{
+    margin-bottom: 1.5rem;
+}
+
+.top-destination .destination-img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.top-destination .destination-text{
+    color: #102437;
+    text-align: center;
+    font-size: 1.4em;
+    height: 25px;
+}
+
+
+
+
+.cta{
+    background: #102437;
+}
+
+.cta .cta-img{
+    height: auto;
+}
+
+.cta .cta-text {
+    color: #c3c8cd;
+    text-align: left;
+    font: 400 16px/26px "Outfit";
+}
+
+.cta .cta-header{
+    color: #ffffff;
+    text-align: left;
+    font: 600 50px/56px "Outfit";
+}
+
+.btn-main{
+    color: #ffffff;
+    background: #867ACA;
+    text-align: center;
+    font: 600 16px/26px "Outfit";
+    padding: 15px 30px;
+    display: inline-block;
+    border-radius: 32px;
+    outline: none;
+    border: none;
+}

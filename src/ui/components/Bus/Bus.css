@@ -1,0 +1,42 @@
+.bus{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 80px rgba(115, 113, 113, 0.25);
+    border-radius: 51px;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+}
+
+.bus .bus-name{
+    color: #102437;
+    text-align: center;
+    font: 600 25px/56px "Outfit";
+}
+
+.bus .bus-logo{
+    width: 150px;
+    max-height: 75px;
+}
+
+.bus .from{
+    color: #000000;
+    text-align: center;
+    font: 600 18px/22px "Outfit";
+}
+
+.bus .from_time{
+    color: #102437;
+    text-align: center;
+    font: 600 40px/46px "Outfit";
+}
+
+.bus .departure-time-text{
+    color: #9085d1;
+    text-align: center;
+    font: 600 18px/22px "Outfit";
+}
+
+.bus .booking-price{
+    color: #102437;
+    text-align: center;
+    font: 600 24px/28px "Outfit";
+}

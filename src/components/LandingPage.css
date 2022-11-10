@@ -7,8 +7,6 @@
 }
 .landing-page {
   background: #faf9f9;
-  width: 1440px;
-  height: 3345px;
   position: relative;
   overflow: hidden;
 }
@@ -363,6 +361,7 @@
   position: absolute;
   left: 94px;
   top: 1108px;
+  background: url('static/img/hero_bg.png')
 }
 .features-2 {
   width: 1440px;

@@ -2,8 +2,8 @@
 import './App.css';
 import React from 'react';
 import {Route, Routes} from "react-router-dom"
-import { LandingPage } from './landing';
-import { SelectBus } from './selectbus';
+import Home from './ui/pages/Home/Home';
+import SelectBus from './ui/pages/SelectBus/SelectBus';
 
 
 function App() {
