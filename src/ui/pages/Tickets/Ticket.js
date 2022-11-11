@@ -6,7 +6,9 @@ export default function Ticket(){
    
     return(<>
            <Header />
-
+             <div>
+                
+             </div>
 
            <Footer />
         </>) 

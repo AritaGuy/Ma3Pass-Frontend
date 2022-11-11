@@ -6,7 +6,7 @@ import { useParams, Link, Routes, Route } from 'react-router-dom'
 
 export default function SelectBus(){
     let params = useParams()
-    const getRoute = "http://localhost:8000/matatu"
+    const getRoute = "https://b371-105-162-20-60.eu.ngrok.io/matatu"
     const [matatu, setMatatu]=useState([])
     
     useEffect(()=>{

@@ -38,36 +38,19 @@ export default function Home(){
                         </div>
                        {route.map((trip)=>{ 
                           return <div className="row">
-                           <div className="col-lg-3">
+                           <div className="col-lg-8">
                            
                               <select className="input" placeholder="Destination">
-                                   {/* <option value="">Departure</option> */}
-                                   <option key={trip.id} value={trip.departure}>{trip.departure}</option>
+                                 
+                                   <option key={trip.id} value={trip.departure}>From {trip.departure} to {trip.destination}</option>
                                    
                                </select>
                            </div>
-
-                           <div className="col-lg-3">
-                           
-                               <select className="input" placeholder="Destination">
-                                   {/* <option value="">Destination</option> */}
-                                   <option key={trip.id} value={trip.destination}>{trip.destination}</option>
-                               </select>
-                           </div>
-                           
                         
-
-                           {/* <div className="col-lg-2">
-                               <input className="input" type="date" placeholder="Select Date" />
-                           </div>
-
-                           <div className="col-lg-2">
-                               <input className="input" placeholder="Time" />
-                           </div> */}
 
                            <div className="col-lg-2">
                             <Link to={`/selectbus/${trip.id}`}>
-                               <button className="btn-main btn-block" onClick={GetToSelect}>Search</button>
+                               <button className="btn-main btn-block" onClick={GetToSelect}>Select Bus</button>
                              </Link>
                             </div>
                            

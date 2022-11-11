@@ -2,73 +2,99 @@ import React, {useState} from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import "./book.css"
+import {Link, Route, Routes} from "react-router-dom"
 
 export default function Book(){
     const [formData, setFormData] = useState({
-        name: "",
-        phone: "",
-        password: ""
+        passenger_id: "",
+        ticket_no: "",
+        matatu_id: ""
       });
+    // const [passengerId, setPassengerId] = useState()
+    // const [matatuId, setMatatuId] = useState()
+    // const [ticketNo, setTicketNo] = useState()
       
       function handleChange(event) {
         setFormData({
           ...formData,
-          [event.target.id]: event.target.value,
+          [event.target.id]: parseInt(event.target.value),
         });
       }
-      
-      const handleSubmit = (e) => {
+     
+      function handleSubmit(e){
         e.preventDefault();
-        fetch("http://localhost:3000/passengers", {
+        console.log(formData)
+        fetch("https://b371-105-162-20-60.eu.ngrok.io/booking", {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/JSON"
           },
           body: JSON.stringify(formData)
-        });
+        })
+        .then(r => r.json())
+        .then(data=>{
+          
+          console.log(data)
+          if (data){
+            alert("You have booked a ticket")
+          }
+        
+        })
+        
       }
+
+      function GetToSelect(){
+        <Routes>
+          <Route path={`/selectbus`} />
+        </Routes>;
+     }
      
     return (
       <>
         <Header />
         <form onSubmit={handleSubmit} className="booking-form">
           <div className="fields">
-            <label>Name</label>
+            <label>Passenger ID</label>
             <br />
             <input
               className="inputs"
-              type="text"
-              value={formData.name}
+              id = "passenger_id"
+              type="number"
+              value={formData.passenger_id}
               onChange={handleChange}
             />
           </div>
 
           <div className="fields">
-            <label>Phone</label>
+            <label>ticket_no</label>
             <br />
             <input
               className="inputs"
-              type="phone"
-              value={formData.phone}
+              id = "ticket_no"
+              type="number"
+              value={formData.ticket_no}
               onChange={handleChange}
             />
           </div>
 
           <div className="fields">
-            <label>Password</label>
+            <label>Matatu Id</label>
             <br />
             <input
               className="inputs"
-              type="password"
-              value={formData.password}
+              id ="matatu_id"
+              type="number"
+              value={formData.matatu_id}
               onChange={handleChange}
             />
           </div>
 
           <br />
-          <button className="submit-btn" type="submit">
-            Submit
-          </button>
+          
+          <input name="submit" type="submit" value="Submit" />
+            
+          
+          
         </form>
 
         <Footer />
