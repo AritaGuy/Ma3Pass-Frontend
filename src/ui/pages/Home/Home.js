@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 import './Home.css'
+import { Route, Routes, Link } from 'react-router-dom'
 
 export default function Home(){
+    const getRoute = "http://localhost:8000/routes"
+    const [route, setRoute] = useState([])
+
+    useEffect(()=>{
+        fetch(`${getRoute}`)
+        .then(r => r.json()
+        .then((data)=>setRoute(data))) 
+    }, [])
+    function GetToSelect(){
+        <Routes>
+          <Route path={`/selectbus`} />
+        </Routes>;
+     }
+
     return (
         <>
         
@@ -21,36 +36,44 @@ export default function Home(){
                         <div className="hero-text mb-4">
                             Fully automated booking service
                         </div>
+                       {route.map((trip)=>{ 
+                          return <div className="row">
+                           <div className="col-lg-3">
+                           
+                              <select className="input" placeholder="Destination">
+                                   {/* <option value="">Departure</option> */}
+                                   <option key={trip.id} value={trip.departure}>{trip.departure}</option>
+                                   
+                               </select>
+                           </div>
 
-                        <div className="row">
+                           <div className="col-lg-3">
+                           
+                               <select className="input" placeholder="Destination">
+                                   {/* <option value="">Destination</option> */}
+                                   <option key={trip.id} value={trip.destination}>{trip.destination}</option>
+                               </select>
+                           </div>
+                           
+                        
 
-                            <div className="col-lg-3">
-                                <select className="input" placeholder="Destination">
-                                    <option value="">Departure</option>
-                                    <option>Nakuru</option>
-                                </select>
+                           {/* <div className="col-lg-2">
+                               <input className="input" type="date" placeholder="Select Date" />
+                           </div>
+
+                           <div className="col-lg-2">
+                               <input className="input" placeholder="Time" />
+                           </div> */}
+
+                           <div className="col-lg-2">
+                            <Link to={`/selectbus/${trip.id}`}>
+                               <button className="btn-main btn-block" onClick={GetToSelect}>Search</button>
+                             </Link>
                             </div>
-
-                            <div className="col-lg-3">
-                                <select className="input" placeholder="Destination">
-                                    <option value="">Destination</option>
-                                    <option>Nakuru</option>
-                                </select>
-                            </div>
-
-                            <div className="col-lg-2">
-                                <input className="input" type="date" placeholder="Select Date" />
-                            </div>
-
-                            <div className="col-lg-2">
-                                <input className="input" placeholder="Time" />
-                            </div>
-
-                            <div className="col-lg-2">
-                                <button className="btn-main btn-block">Search</button>
-                            </div>
-                            
-                        </div>
+                           
+                       </div>
+                       })} 
+                        
                     </div>
 
                 </div>
@@ -130,9 +153,7 @@ export default function Home(){
                                 looking for. Travel in style with Ma3Pass
                             </div>
 
-                            <div className="cta-btn text-left">
-                                <button className="btn-main">Book Now</button>
-                            </div>
+                            
                         </div>
 
                         <div className="col-lg-6">

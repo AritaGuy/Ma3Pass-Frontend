@@ -1,7 +1,7 @@
 import React from 'react'
 import './Bus.css'
 
-export default function Bus(){
+export default function Bus({sacco}){
     return (
         <div className="bus d-fle">
             
@@ -10,7 +10,7 @@ export default function Bus(){
                     <img className="bus-logo" src="img/buses/easycoach.png"/>
                     <hr />
                     <div className="bus-name">
-                        EasyCoach
+                        {sacco}
                     </div>
                 </div>
 
