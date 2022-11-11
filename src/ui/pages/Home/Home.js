@@ -5,7 +5,7 @@ import './Home.css'
 import { Route, Routes, Link } from 'react-router-dom'
 
 export default function Home(){
-    const getRoute = "http://localhost:8000/routes"
+    const getRoute = "https://b371-105-162-20-60.eu.ngrok.io/routes"
     const [route, setRoute] = useState([])
 
     useEffect(()=>{
